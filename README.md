@@ -21,7 +21,7 @@ This project contains two main parts:
    npm install
    ```
 
-3. Log in to Cloudflare:
+3. Log in to Cloudflare for access to permissions:
    ```bash
    npx wrangler login
    ```
@@ -36,9 +36,9 @@ This project contains two main parts:
    https://your-worker-name.username.workers.dev
    ```
 
-5. After a successful deployment, Wrangler will show the worker's URL:
+6. Go to src/config.ts and change the variable to the worker's URL:
    ```
-   https://your-worker-name.username.workers.dev
+   export const WORKER_DOMAIN = "https://your-worker-name.username.workers.dev";
    ```
 ---
 
@@ -69,19 +69,9 @@ This project contains two main parts:
    ```bash
    npm run dev
    ```
-
 ---
 
-## 3. Run the Frontend
-
-
-Then open the link shown in your terminal (usually [http://localhost:5173](http://localhost:5173)).
-
-Your frontend will now connect to the deployed Worker AI backend using the domain from your `.env` file.
-
----
-
-## 6. Re-deploying Updates
+## Re-deploying Updates, if needed 
 
 ### For Worker changes:
 ```bash
