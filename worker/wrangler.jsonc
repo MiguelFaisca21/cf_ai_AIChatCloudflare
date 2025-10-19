@@ -1,0 +1,34 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "aichat-worker",
+	"main": "src/app.ts",
+	"compatibility_date": "2025-10-09",
+	"compatibility_flags": ["nodejs_compat"],
+	"ai": {
+		"binding": "AI"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"durable_objects": {
+		"bindings": [
+		{
+			"name": "AIChat",
+			"class_name": "AIChat"
+		}
+		]
+	},
+	"migrations": [
+		{
+		"tag": "v1",
+		"new_sqlite_classes": [
+			"AIChat"
+		]
+		}
+	],
+	"vars": {
+		"GOOGLE_CLIENT_ID": "1022549859792-cnii4rh1cf7sqm5jkuipdmqpf5v20n6h.apps.googleusercontent.com",
+		"GOOGLE_CLIENT_SECRET": "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",
+		"JWT_SECRET": "4e68a1e7d8b94f1a82c8f693d76e2b5a97f19f47a86dc06a6f5ef12a6a24f3c2"
+	}
+}
