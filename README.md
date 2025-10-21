@@ -31,14 +31,9 @@ This project contains two main parts:
    npx wrangler deploy
    ```
 
-5. After a successful deployment, Wrangler will show the worker's URL:
+5. After a successful deployment, Wrangler will show the worker's URL. This URL will be used to enable the REACT frontend to communicate with the deployed worker:
    ```
    https://your-worker-name.username.workers.dev
-   ```
-
-6. Go to src/config.ts and change the variable to the worker's URL:
-   ```
-   export const WORKER_DOMAIN = "https://your-worker-name.username.workers.dev";
    ```
 ---
 
@@ -55,23 +50,18 @@ This project contains two main parts:
    ```bash
    npm install
    ```
-
-3. Create a environment file:
-   ```bash
-   cp .env.example .env
+3. Go to src/config.ts and change the variable to the previously deployed worker's URL:
+   ```
+   export const WORKER_DOMAIN = "https://your-worker-name.username.workers.dev";
    ```
 
-4. Open the newly created environment file `.env` and replace the placeholder with the Worker's URL:
-   ```env
-   VITE_WORKER_URL=https://your-worker-name.username.workers.dev
-   ```
-5. Start React Frontend:
+4. Start React Frontend:
    ```bash
-   npm run dev
+   npm start
    ```
 ---
 
-## Re-deploying Updates, if needed 
+## Re-deploying Updates locally, if needed 
 
 ### For Worker changes:
 ```bash
@@ -82,7 +72,7 @@ npx wrangler deploy
 ### For Frontend changes:
 ```bash
 cd frontend
-npm run build
+npm start
 ```
 
 ---
